@@ -1,0 +1,8 @@
+@import './color-constants';
+
+$typographyColorsDefault: (
+  'typography-default-color': $colorWhite,
+  'typography-black-color': $colorBlack,
+  'typography-yellow-color': $colorYellow,
+  'typography-pink-color': $colorPink
+);
