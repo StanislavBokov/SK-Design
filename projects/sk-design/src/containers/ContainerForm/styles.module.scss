@@ -1,0 +1,131 @@
+@import '../../assets/styles/mixins';
+
+@keyframes test {
+    0% {
+        transform: rotate(0deg);
+    } 100% {
+        transform: rotate(360deg);
+    }
+}
+
+.containerWrapper {
+    box-shadow: 0px 5px 20px rgba(53, 50, 56, 0.14);
+    border-radius: spacing(1);
+    max-width: 440px;
+    box-sizing: border-box;
+    padding: spacing(5.75, 3.75);
+
+
+    .wrapper {
+        display: grid;
+        column-gap: 20px;
+        row-gap: 25px;
+        grid-template-columns: repeat(2, 180px);
+        margin-bottom: spacing(2.5);
+
+        .error {
+            position: relative;
+            top:-15px
+        }
+        .errorMessage {
+            color: var(--typography-error-color);
+        }
+    }
+    .wrapper2 {
+        @include flexbox(space-between, center, column);
+        
+        .error {
+            position: relative;
+            top:-15px
+        }
+        .errorMessage {
+            color: var(--typography-error-color);
+            position: absolute;
+            top:55px;
+            align-self: start;
+
+        }
+        .selectCity {
+            padding: spacing(2.25, 1.75);
+            border-radius: spacing(1);
+            min-width: 100%;
+            background-color: transparent;
+            border: 2px solid var(--input-default-border);
+            margin-bottom: spacing(2.5);
+            outline: none;
+            &:focus {
+                border: 2px solid var(--input-focus-border);
+            }
+            
+            .options {
+                border-radius: spacing(1) !important; 
+            }
+            
+        }
+
+        .width {
+            min-width: 380px;   
+            margin-bottom: spacing(2.5)
+        }
+
+        .wrapperAdditionalField {
+            margin: spacing(0 ,0, 3.25);
+            align-self: start;
+            .chevronImg {
+                padding: spacing(0.3, 1);
+            }
+            .chevronRotate {
+                transform: rotate(180deg);
+            }
+        }
+
+        .btn {
+            min-width: 100%;
+            border-radius: spacing(1);
+            height: 50px;
+            background-color: var(--button-default-backgroundColor);
+            border:none;
+            color: var(--button-default-color);
+            font-size: 14px;
+
+            &:hover {
+                
+                background-color: var(--button-hover-backgroundColor);
+            }
+            &:active {
+                background-color: var(--button-active-backgroundColor);
+            }
+            &:disabled {
+                  background-color: var(--button-disabled-backgroundColor);
+                  color: var(--button-disabled-color)
+            }
+
+            .imgLoader {
+                animation: test linear 1.5s infinite;
+            }
+   
+        }
+        .loadingBtnColor {
+            background-color: var(--button-default-backgroundColor) !important;
+      
+        }
+    }
+ 
+}
+
+@include forTablet {
+    .containerWrapper {
+        width: 300px;
+        padding: spacing(6,1);
+
+        .wrapper {
+            grid-template-columns: repeat(2, 140px);
+            column-gap: 5px;
+        }
+        .wrapper2 {
+            .width {
+                min-width: 290px;
+            }
+        }
+    }
+}

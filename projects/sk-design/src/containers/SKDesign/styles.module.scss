@@ -1,0 +1,38 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/color-themes';
+.mainWrapper {
+    max-width: 940px;
+    margin-right: spacing(7.5);
+
+
+    .titleWpapper {
+        margin: spacing(5, 0);
+    }
+
+    .textWrapper {
+
+        .textItem {
+            font-size: 14px;
+            line-height: 21px;
+            color: var(--typography-default-color);
+            margin-bottom: spacing(2);
+            font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+
+            .span {
+                color: var(--typography-turquoise-color)
+            }   
+        }
+    }
+}
+@include forDesktopMiddle {
+    .mainWrapper {
+        margin-right: spacing(0);
+        margin-bottom: spacing(5);
+    }
+}
+@include forTablet {
+    .imgLogo {
+
+        width: 300px;
+    }
+}

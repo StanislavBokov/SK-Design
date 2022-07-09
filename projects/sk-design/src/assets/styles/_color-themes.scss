@@ -1,0 +1,16 @@
+@import './component-variables/input';
+@import '../styles/component-variables/typography';
+@import '../styles/component-variables/button';
+
+:root {
+  $colors: (
+    $inputColorDefault,
+    $typogrphyColorDefault,
+    $buttonColorDefault,
+  );
+  @each $key_name in $colors {
+    @each $key_name_2, $value in $key_name {
+      --#{$key_name_2}: #{$value};
+    }
+  }
+}

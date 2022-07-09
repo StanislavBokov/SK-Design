@@ -1,0 +1,8 @@
+@import './color-constants';
+
+$inputColorDefault: (
+  // border
+  'input-default-border': $colorGrey,
+  'input-focus-border': $colorTurquoise,
+  'input-error-border': $colorRed,
+);

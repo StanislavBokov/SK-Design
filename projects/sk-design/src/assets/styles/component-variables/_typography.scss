@@ -1,0 +1,10 @@
+@import './color-constants';
+
+$typogrphyColorDefault: (
+  // border
+  'typography-default-color': $colorBlack,
+  'typography-secondary-color': $colorGrey5,
+  'typography-error-color': $colorRed,
+  'typography-turquoise-color': $colorTurquoise,
+
+);

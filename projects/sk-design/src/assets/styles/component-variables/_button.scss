@@ -1,0 +1,16 @@
+@import './color-constants';
+
+$buttonColorDefault: (
+   // background-color
+
+  'button-default-backgroundColor': $colorTurquoise,
+  'button-hover-backgroundColor': $colorTurquoise5,
+  'button-active-backgroundColor': $colorTurquoise10,
+  'button-disabled-backgroundColor': $colorGrey,
+  
+
+
+  // text-color
+  'button-default-color': $colorWhite,
+  'button-disabled-color': $colorGrey5,
+);
