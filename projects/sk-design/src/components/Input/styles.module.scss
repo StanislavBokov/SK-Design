@@ -2,49 +2,77 @@
 @import '../../assets/styles/color-themes';
 
 .wrapperInput {
-    position: relative;
+//     position: relative;
+//     .label {
+//         position: absolute;
+//         left:10px;
+//         top: -5px;
+//         background-color: white;
+//         padding: spacing(0, 1);
+//         color:  var(--typography-secondary-color);
+//         font-size: 12px;
+
+//         &:focus {
+//             color: var(--input-focus-border);
+
+//         }
+//     }
+//     .errorLabel {
+//         color: var(--input-error-border)
+//     }
     .label {
-        position: absolute;
-        left:10px;
-        top: -5px;
-        background-color: white;
-        padding: spacing(0, 1);
-        color:  var(--typography-secondary-color);
-        font-size: 12px;
+        position: relative;
+        .textLabel {
+            position: absolute;
+            top: -22px;
+            left:10px;
+            padding: spacing(0, 1);
+            background-color: white;
+            font-size: 12px;
+        }
+        &:focus-within {
+            .textLabel {
+                color:  var(--input-focus-border);
+            }
 
-        &:focus {
-            color: var(--input-focus-border);
+            .input {
+                border-color:  var(--input-focus-border);   
+            }
+        }
 
+        .input {
+            border-radius: spacing(1);
+            padding: spacing(2.25, 2);
+            font-size: 14px;
+            border: 2px solid var(--input-default-border);
+            outline: none;
+            box-sizing: border-box;
+            max-width: 180px;
+            margin-bottom: spacing(0.5);
+            
+        }
+        .errorLabel {
+            color:  var(--input-error-border) !important
+        } 
+        .error {
+            border: 2px solid var(--input-error-border) !important;
+            &::-webkit-input-placeholder { color: red; }
         }
     }
-    .errorLabel {
-        color: var(--input-error-border)
-    }
-    .input {
-        border-radius: spacing(1);
-        padding: spacing(2.25, 2);
-        font-size: 14px;
-        border: 2px solid var(--input-default-border);
-        outline: none;
-        box-sizing: border-box;
-        max-width: 180px;
-        margin-bottom: spacing(0.5);
-        
-        &:focus {
-            border: 2px solid var(--input-focus-border);
-        }
-    }
-    .error {
-        border: 2px solid var(--input-error-border) !important;
-        &::-webkit-input-placeholder { color: red; }
-    }
+  
 }
 
 @include forTablet {
     .wrapperInput {
-        .input {
-            max-width: 140px;
+        .label {
+            .textLabel {
+                font-size: 10px;
+            }
+            .input {
+                max-width: 140px;
+            }
         }
+   
     }
    
 }

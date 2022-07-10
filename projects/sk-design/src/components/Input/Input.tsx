@@ -4,9 +4,8 @@ import cn from 'clsx';
 
 interface InputProps {
   className?: string,
-  focus?: boolean,
   placeholder: string,
-  text: string,
+  textLabel?: string,
   required?: boolean,
   value: string,
   name: string,
@@ -17,9 +16,8 @@ interface InputProps {
 
 export const Input:FC<InputProps> = ({ 
   className,
-  focus,
   placeholder, 
-  text, 
+  textLabel, 
   required = false,
   value,
   name,
@@ -30,19 +28,22 @@ export const Input:FC<InputProps> = ({
 
   return (
     <div className={cn(styles.wrapperInput, { [styles.error]:error })}>
-      <label className={cn({ [styles.focusLabel]: focus }, styles.label, { [styles.errorLabel]:error })}>{text}</label>
-      <input 
-        name={name}
-        type="text" 
-        className={cn(className, styles.input, { [styles.error]:error })} 
-        placeholder={placeholder} 
-        required={required} 
-        value={value}
-        onChange={onChange}
-        onBlur={onBlur}
-        autoComplete="off"
+      <label className={cn(styles.label)}>
+        <span className={cn(styles.textLabel, { [styles.errorLabel]: error })}>{textLabel}</span>
+        <input 
+          name={name}
+          type="text" 
+          className={cn(className, styles.input, { [styles.error]:error })} 
+          placeholder={placeholder} 
+          required={required} 
+          value={value}
+          onChange={onChange}
+          onBlur={onBlur}
+          autoComplete="off"
     
-      />
+        />
+      </label>
+    
     </div>
   );
 };
